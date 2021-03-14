@@ -1,21 +1,78 @@
 <!DOCTYPE html>
 <html>
     <style>
+        :root {
+            --radius: 50px;
+        }
         #body{
             background-color: aquamarine;
             height: 100px;
             width: 250px;
-            border-radius: 25%;
+            border-top-left-radius: 100%;
+            border-top-right-radius: 100%;
+            animation-name: body;
+            position: relative;
+            animation-duration: 5s;
         }
-        #body::after{
-            content: "";
+        #left-wheel{
+            background-color: black;
+            height: var(--radius);
+            width: var(--radius);
             border-radius: 50%;
+            position: relative;
+            bottom: 25px;
+            left: 30px;
+            animation-name: left-wheel;
         }
+        #right-wheel{
+            background-color: black;
+            height: var(--radius);
+            width: var(--radius);
+            border-radius: 50%;
+            position: relative;
+            left: 180px;
+            bottom: 80px;
+            animation-name: right-wheel;
+        }
+        #window-left{
+            height: 50px;
+            width: 70px;
+            position:relative;
+            background-color: cornflowerblue;
+            bottom: 180px;
+            left: 50px;
+            border-top-left-radius: 100%;
+            animation-name: window-left;
+        }
+        #window-right{
+            height: 50px;
+            width: 70px;
+            position:relative;
+            background-color: cornflowerblue;
+            bottom: 230px;
+            left: 130px;
+            border-top-right-radius: 100%;
+            animation-name: window-right;
+        }
+
+        @keyframes body {
+            0%{
+                left: 0px;
+            }
+            100%{
+                left: 100px;
+            }
+        }
+
     </style>
     <head>
         <title>Car Animation</title>
     </head>
     <body>
-        <div id="body"></div>
+        <div id = "body"></div>
+        <div id = "left-wheel"></div>
+        <div id = "right-wheel"></div>
+        <div id = "window-left"></div>
+        <div id = "window-right"></div>
     </body>
 </html>
